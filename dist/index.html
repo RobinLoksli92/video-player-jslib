@@ -10,6 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     
     <style type="text/css">
+        .progress-bar-marker {
+            height: 7px;
+            width: 7px;
+            background-color:red;
+            border-radius: 50%;
+            display: inline-block;
+            border: solid;
+            border-color: white ;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            align-self: center;
+        }
+        .progress-bar {
+            display: flex;
+            background-color: grey;
+            width: 100%;
+            height: 5px;
+            align-self: center;
+            margin-left: 4px;
+            margin-right: 440px;
+            border-radius: 2px;
+
+        }
+        .progress-bar-slider {
+            display: flex;
+            background-color: red;
+            border-radius: 2px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
         .duration {
             display: flex;
             margin-right: -5ch;
@@ -74,6 +103,10 @@
             
             <div class="duration">
                 <button style="padding-left: 0px;" class="time-buttons js-current-time"></button>
+                <div class="progress-bar js-progress">
+                    <div class="progress-bar-slider js-progress-slider"></div>
+                    <div span class="progress-bar-marker"></div>
+                </div>
                 <button style="padding-right: 0px;" class="time-buttons js-duration"></button>
             </div>
             <div class="right-buttons">

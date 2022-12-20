@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Плеер</title>
+    <link rel="stylesheet" href="static/fonts/font-awesome.min.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <style type="text/css">
+        .duration {
+            display: flex;
+            margin-right: -5ch;
+            width: 86%;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0;
+        }
+        .right-buttons {
+            margin-left: auto;
+            margin-right: 0px;
+        }
+        
+        .time-buttons {
+            border-style:hidden;
+            background-color:transparent;
+            font-family:'Roboto', sans-serif;
+            font-size:medium;
+            color: white;
+        }
+        .button-transparent {
+            border-style:hidden;
+            cursor:pointer; 
+            color:White;
+            background-color:transparent;
+            font-size: larger;
+            width: 37px;
+            height: 42px;
+            padding: 0px;
+        }
+        .player {
+            display: flex;
+            width: 800px; 
+            height: 600px; 
+            box-shadow:0 0 10px rgba(0,0,0,1);
+            flex-direction: column;
+        }
+        .buttons-field {
+            display: flex;
+            background:black;
+            padding: 0px;
+        }
+        .video-container {
+            display: flex;
+            flex-grow: 1;
+        }
+        .emply-space {
+            display: flex;
+            flex-grow: 1;
+        } 
+    </style>
+</head>
+
+<body>
+    <div id="player" class="player">
+        <div class="video-container js-video-container"></div>
+        <div class="buttons-field">
+            <button class="button-transparent js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
+            <button class="button-transparent js-pause-button"><i class="fa fa-pause" aria-hidden="true"></i></button>
+            <button class="button-transparent js-mute-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+            <button class="button-transparent js-volume-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+            
+            <div class="duration">
+                <button style="padding-left: 0px;" class="time-buttons js-current-time"></button>
+                <button style="padding-right: 0px;" class="time-buttons js-duration"></button>
+            </div>
+            <div class="right-buttons">
+                <button class="button-transparent js-fullscreen-button"><i class="fa fa-expand" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+    <script src="static/player.js"></script>
+
+    <script type="text/javascript">
+        createPlayer({elementId: 'player'});
+    </script>
+
+</body>
+</html>

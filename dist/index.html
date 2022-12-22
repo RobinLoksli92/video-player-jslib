@@ -20,6 +20,10 @@
             border-color: white ;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
             align-self: center;
+            opacity: 0;
+            transition-property: opacity;
+            transition-duration: 300ms;
+            transition-timing-function: ease-out;
         }
         .progress-bar {
             display: flex;
@@ -30,7 +34,12 @@
             margin-left: 4px;
             margin-right: 440px;
             border-radius: 2px;
-
+        }
+        .progress-bar:hover .progress-bar-marker{
+            opacity: 1;
+            transition-property: opacity;
+            transition-duration: 300ms;
+            transition-timing-function: ease-in;
         }
         .progress-bar-slider {
             display: flex;
@@ -39,6 +48,7 @@
             margin-left: 0px;
             margin-right: 0px;
         }
+
         .duration {
             display: flex;
             margin-right: -5ch;
@@ -105,7 +115,7 @@
                 <button style="padding-left: 0px;" class="time-buttons js-current-time"></button>
                 <div class="progress-bar js-progress">
                     <div class="progress-bar-slider js-progress-slider"></div>
-                    <div span class="progress-bar-marker"></div>
+                        <div span class="progress-bar-marker"></div>
                 </div>
                 <button style="padding-right: 0px;" class="time-buttons js-duration"></button>
             </div>
